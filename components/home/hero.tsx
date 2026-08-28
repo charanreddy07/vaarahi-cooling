@@ -36,32 +36,32 @@ export function Hero() {
         </p>
 
         <div className="flex flex-wrap gap-3">
-          <Button asChild size="lg" className="rounded-full">
-            <Link href="/contact">
-              Get Quote
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </Link>
+          <Button render={<Link href="/contact" />} size="lg" className="rounded-full">
+            Get Quote
+            <ArrowRight className="ml-1 h-4 w-4" />
           </Button>
           <Button
-            asChild
+            render={<a href={telLink(site.phones[0])} />}
             size="lg"
             variant="outline"
             className="rounded-full border-white/40 bg-transparent text-navy-foreground hover:bg-white/10 hover:text-navy-foreground"
           >
-            <a href={telLink(site.phones[0])}>
-              <Phone className="mr-1 h-4 w-4" />
-              Call Sales
-            </a>
+            <Phone className="mr-1 h-4 w-4" />
+            Call Sales
           </Button>
-          <Button asChild size="lg" className="rounded-full bg-success text-success-foreground hover:bg-success/90">
-            <a
-              href={whatsappLink('Hello Vaarahi Cooling, I would like to enquire about your products.')}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MessageCircle className="mr-1 h-4 w-4" />
-              WhatsApp Inquiry
-            </a>
+          <Button
+            render={
+              <a
+                href={whatsappLink('Hello Vaarahi Cooling, I would like to enquire about your products.')}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
+            size="lg"
+            className="rounded-full bg-success text-success-foreground hover:bg-success/90"
+          >
+            <MessageCircle className="mr-1 h-4 w-4" />
+            WhatsApp Inquiry
           </Button>
         </div>
       </div>

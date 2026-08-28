@@ -47,8 +47,8 @@ export function ProductCard({ product }: { product: Product }) {
             </span>
           </div>
 
-          <Button asChild variant="outline" className="w-full">
-            <Link href={`/products#${product.id}`}>View Full Specs</Link>
+          <Button render={<Link href={`/products#${product.id}`} />} variant="outline" className="w-full">
+            View Full Specs
           </Button>
         </div>
       </div>

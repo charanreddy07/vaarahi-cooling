@@ -41,8 +41,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden md:block">
-          <Button asChild className="rounded-full">
-            <Link href="/contact">Get Quote</Link>
+          <Button render={<Link href="/contact" />} className="rounded-full">
+            Get Quote
           </Button>
         </div>
 
@@ -75,10 +75,11 @@ export function SiteHeader() {
                 </Link>
               )
             })}
-            <Button asChild className="mt-2 mb-2 rounded-full">
-              <Link href="/contact" onClick={() => setOpen(false)}>
-                Get Quote
-              </Link>
+            <Button
+              render={<Link href="/contact" onClick={() => setOpen(false)} />}
+              className="mt-2 mb-2 rounded-full"
+            >
+              Get Quote
             </Button>
           </nav>
         </div>

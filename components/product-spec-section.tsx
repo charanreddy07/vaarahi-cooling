@@ -71,20 +71,22 @@ export function ProductSpecSection({ product, reverse }: { product: Product; rev
           </div>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <Button asChild className="rounded-full">
-              <Link href="/contact">
-                Get Quote
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
+            <Button render={<Link href="/contact" />} className="rounded-full">
+              Get Quote
+              <ArrowRight className="ml-1 h-4 w-4" />
             </Button>
-            <Button asChild variant="outline" className="rounded-full">
-              <a
-                href={whatsappLink(`Hello ${site.brand}, I'm interested in the ${product.name}. Please share more details.`)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp Inquiry
-              </a>
+            <Button
+              render={
+                <a
+                  href={whatsappLink(`Hello ${site.brand}, I'm interested in the ${product.name}. Please share more details.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
+              variant="outline"
+              className="rounded-full"
+            >
+              WhatsApp Inquiry
             </Button>
           </div>
         </div>
